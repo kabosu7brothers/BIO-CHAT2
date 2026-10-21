@@ -1,7 +1,7 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-const SUPABASE_URL = 'https://sdorkxwgzdynyjnkmpzi.supabase.co'; // 自分のURL
-const SUPABASE_ANON_KEY = 'sb_publishable_Mttjc-U-xVtUP9hYBblLdA_jQpHrUUN'; // 自分のAnon Key
+const SUPABASE_URL = 'https://xxxx.supabase.co'; // 自分のURL
+const SUPABASE_ANON_KEY = 'sb_publishable_xxxxx'; // 自分のAnon Key
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // 質問一覧表示
@@ -16,7 +16,7 @@ async function loadQuestions() {
   const list = document.getElementById('question-list');
   list.innerHTML = '';
   data.forEach(q => {
-    const div = document.createElement('div');
+      const div = document.createElement('div');
   div.classList.add('question-card');
   div.innerHTML = `
     <a href="question.html?id=${q.id}" class="question-title">${q.title}</a>
@@ -24,6 +24,7 @@ async function loadQuestions() {
   `;
   list.appendChild(div);
 });
+}
 
 // 質問投稿
 async function postQuestion() {
@@ -75,7 +76,7 @@ async function loadAnswers(questionId) {
   const list = document.getElementById('answer-list');
   list.innerHTML = '';
   data.forEach(a => {
-    const div = document.createElement('div');
+     const div = document.createElement('div');
   div.classList.add('answer-card');
   div.innerHTML = `
     <p>${a.body}</p>
@@ -83,6 +84,7 @@ async function loadAnswers(questionId) {
   `;
   list.appendChild(div);
 });
+}
 
 // 回答投稿
 async function postAnswer() {
