@@ -1,7 +1,7 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-const SUPABASE_URL = 'https://xxxx.supabase.co'; // 自分のURL
-const SUPABASE_ANON_KEY = 'sb_publishable_xxxxx'; // 自分のAnon Key
+const SUPABASE_URL = 'https://sdorkxwgzdynyjnkmpzi.supabase.co'; // 自分のURL
+const SUPABASE_ANON_KEY = 'sb_publishable_Mttjc-U-xVtUP9hYBblLdA_jQpHrUUN'; // 自分のAnon Key
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // 質問一覧表示
