@@ -1,3 +1,4 @@
+/* 全体 */
 body {
   font-family: "Hiragino Sans", "Segoe UI", sans-serif;
   background-color: #f4f6f8;
@@ -5,6 +6,7 @@ body {
   padding: 20px;
 }
 
+/* 質問カード */
 .question-card {
   background-color: #ffffff;
   border: 1px solid #ddd;
@@ -12,12 +14,59 @@ body {
   padding: 12px;
   margin-bottom: 10px;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.1s ease;
+}
+.question-card:hover {
+  transform: scale(1.01);
 }
 
+/* 質問タイトル */
 .question-title {
   font-size: 1.2em;
   font-weight: bold;
   color: #0077cc;
   text-decoration: none;
 }
-.question
+.question-title:hover {
+  text-decoration: underline;
+}
+
+/* 質問者表示 */
+.asker {
+  font-size: 0.85em;
+  color: #555;
+}
+
+/* 回答カード */
+.answer-card {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 8px;
+}
+.answer-card p {
+  margin: 4px 0;
+}
+.responder {
+  font-size: 0.85em;
+  color: #555;
+}
+
+/* フォーム */
+input, textarea, button {
+  font-family: inherit;
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #005fa3;
+}
