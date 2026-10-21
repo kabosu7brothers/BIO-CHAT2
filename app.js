@@ -17,14 +17,13 @@ async function loadQuestions() {
   list.innerHTML = '';
   data.forEach(q => {
     const div = document.createElement('div');
-    div.classList.add('question-card');
-    div.innerHTML = `
-      <a href="question.html?id=${q.id}" class="question-title">${q.title}</a>
-      <p>質問者: ${q.asker}</p>
-    `;
-    list.appendChild(div);
-  });
-}
+  div.classList.add('question-card');
+  div.innerHTML = `
+    <a href="question.html?id=${q.id}" class="question-title">${q.title}</a>
+    <p class="asker">質問者: ${q.asker}</p>
+  `;
+  list.appendChild(div);
+});
 
 // 質問投稿
 async function postQuestion() {
