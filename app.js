@@ -16,26 +16,11 @@ async function loadQuestions() {
   const list = document.getElementById('question-list');
   list.innerHTML = '';
   data.forEach(q => {
-    // 質問一覧表示（カテゴリフィルター対応）
-async function loadQuestions(category = '') {
-  let query = supabase.from('questions').select('*').order('created_at', { ascending: false });
-  if (category) {
-    query = query.eq('category', category);
-  }
-  const { data, error } = await query;
-  if (error) return console.error(error);
-
-  const list = document.getElementById('question-list');
-  list.innerHTML = '';
-  data.forEach(q => {
-    // カテゴリ名 → CSSクラス変換
-    let categoryClass = '';
-    switch (q.category) {
-      case 'プログラミング': categoryClass = 'category-programming'; break;
-      case '趣味': categoryClass = 'category-hobby'; break;
-      case '勉強': categoryClass = 'category-study'; break;
-      default: categoryClass = 'category-other';
-    }
+  　　  const div = document.createElement('div');
+    div.innerHTML = `<a href="question.html?id=${q.id}">${q.title}</a> - ${q.asker}`;
+    list.appendChild(div);
+  });
+}
 
     // 質問カード作成
     const div = document.createElement('div');
