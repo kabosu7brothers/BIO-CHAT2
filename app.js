@@ -1,7 +1,7 @@
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 
-const SUPABASE_URL = 'https://sdorkxwgzdynyjnkmpzi.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_Mttjc-U-xVtUP9hYBblLdA_jQpHrUUN';
+const SUPABASE_URL = 'https://xxxx.supabase.co'; // 自分のURL
+const SUPABASE_ANON_KEY = 'sb_publishable_xxxxx'; // 自分のAnon Key
 const supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 // 質問一覧表示
@@ -16,20 +16,15 @@ async function loadQuestions() {
   const list = document.getElementById('question-list');
   list.innerHTML = '';
   data.forEach(q => {
-  　　  const div = document.createElement('div');
-    div.innerHTML = `<a href="question.html?id=${q.id}">${q.title}</a> - ${q.asker}`;
-    list.appendChild(div);
-  });
-}
-
-    // 質問カード作成
     const div = document.createElement('div');
-    div.classList.add('question-card', categoryClass);
-    div.innerHTML = `<a href="question.html?id=${q.id}" style="color:white;">${q.title}</a> - ${q.asker} [${q.category}]`;
+    div.classList.add('question-card');
+    div.innerHTML = `
+      <a href="question.html?id=${q.id}" class="question-title">${q.title}</a>
+      <p>質問者: ${q.asker}</p>
+    `;
     list.appendChild(div);
   });
 }
-
 
 // 質問投稿
 async function postQuestion() {
@@ -60,7 +55,9 @@ async function loadQuestionDetail() {
 
   if (error) return console.error(error);
 
-  document.getElementById('question-detail').innerHTML =
+  const detailDiv = document.getElementById('question-detail');
+  detailDiv.classList.add('question-card');
+  detailDiv.innerHTML =
     `<h1>${data.title}</h1><p>${data.body}</p><p>質問者: ${data.asker}</p>`;
 
   loadAnswers(id);
@@ -80,6 +77,7 @@ async function loadAnswers(questionId) {
   list.innerHTML = '';
   data.forEach(a => {
     const div = document.createElement('div');
+    div.classList.add('answer-card');
     div.innerHTML = `<p>${a.body}</p><p>回答者: ${a.responder}</p>`;
     list.appendChild(div);
   });
@@ -110,4 +108,3 @@ if (document.getElementById('question-detail')) {
   loadQuestionDetail();
   document.getElementById('post-answer').addEventListener('click', postAnswer);
 }
-
