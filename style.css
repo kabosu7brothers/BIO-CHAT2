@@ -1,18 +1,73 @@
+/* 全体 */
 body {
-  font-family: sans-serif;
+  font-family: "Hiragino Sans", "Segoe UI", sans-serif;
   background-color: #f4f6f8;
-  padding: 20
- /* 質問カードの基本スタイル */
-.question-card {
-  padding: 8px;
-  margin: 5px 0;
-  border-radius: 6px;
-  color: white;
+  margin: 0;
+  padding: 20px;
 }
 
-/* カテゴリごとの色分け */
-.category-programming { background-color: #0077ff; } /* プログラミング: 青 */
-.category-hobby       { background-color: #4caf50; } /* 趣味: 緑 */
-.category-study       { background-color: #ff9800; } /* 勉強: オレンジ */
-.category-other       { background-color: #9e9e9e; } /* その他: 灰色 */
+/* 質問カード */
+.question-card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: transform 0.1s ease;
+}
+.question-card:hover {
+  transform: scale(1.01);
+}
 
+/* 質問タイトル */
+.question-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #0077cc;
+  text-decoration: none;
+}
+.question-title:hover {
+  text-decoration: underline;
+}
+
+/* カテゴリタグ */
+.category-tag {
+  display: inline-block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.85em;
+  color: white;
+  margin-left: 8px;
+}
+.category-programming { background-color: #0077ff; }
+.category-hobby       { background-color: #4caf50; }
+.category-study       { background-color: #ff9800; }
+.category-other       { background-color: #9e9e9e; }
+
+/* 回答カード */
+.answer-card {
+  background-color: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 8px;
+}
+
+/* フォーム */
+input, textarea, select, button {
+  font-family: inherit;
+  padding: 8px;
+  margin: 4px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #005fa3;
+}
