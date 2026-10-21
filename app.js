@@ -76,11 +76,13 @@ async function loadAnswers(questionId) {
   list.innerHTML = '';
   data.forEach(a => {
     const div = document.createElement('div');
-    div.classList.add('answer-card');
-    div.innerHTML = `<p>${a.body}</p><p>回答者: ${a.responder}</p>`;
-    list.appendChild(div);
-  });
-}
+  div.classList.add('answer-card');
+  div.innerHTML = `
+    <p>${a.body}</p>
+    <p class="responder">回答者: ${a.responder}</p>
+  `;
+  list.appendChild(div);
+});
 
 // 回答投稿
 async function postAnswer() {
