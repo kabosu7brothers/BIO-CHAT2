@@ -11,7 +11,10 @@ async function loadQuestions() {
     .select('*')
     .order('created_at', { ascending: false });
 
-  if (error) return console.error(error);
+  if (error){
+    console.error(error);
+    return;
+  }
 
   const list = document.getElementById('question-list');
   list.innerHTML = '';
